@@ -54,7 +54,7 @@ popScope();
 public void enterBlock(DecafParser.BlockContext ctx) {
 LocalScope l = new LocalScope(currentScope);
 saveScope(ctx, currentScope);
-pushScope(l);
+//pushScope(l);
 }
 
 @Override
