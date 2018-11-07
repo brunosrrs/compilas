@@ -62,6 +62,22 @@ public void exitBlock(DecafParser.BlockContext ctx) {
 popScope();
 }
 
+@Override public void enterVar_decl(DecafParser.Var_declContext ctx) {
+   
+    for(int i = 0; i < ctx.ID().size(); i++){
+       defineVar(ctx.type(), ctx.ID(i).getSymbol());
+    }
+
+    }
+   
+
+@Override public void exitVar_decl(DecafParser.Var_declContext ctx) { }
+    /**
+     * {@inheritDoc}
+     *
+     * <p>The default implementation does nothing.</p>
+     */
+
 @Override
 public void enterDecl(DecafParser.DeclContext ctx) {
 defineVar(ctx.type(), ctx.ID().getSymbol());
